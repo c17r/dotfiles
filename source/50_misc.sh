@@ -22,3 +22,5 @@ fi
 
 # Disable ansible cows }:]
 export ANSIBLE_NOCOWS=1
+
+eval "$(hub alias -s)"

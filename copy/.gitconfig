@@ -1,13 +1,13 @@
 [user]
   name = Christian Sauer
   email = sauerc@gmail.com
-[color]
 [alias]
   s = !git fetch --all --quiet && git status -sb
   ls = log --pretty=format:'%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]' --decorate --date=short
   lsv = log --pretty=format:'%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]' --decorate --date=short --numstat
   tree-log = log --all --graph --decorate --oneline
   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
+  who = !git log --pretty=format:"%an" | sort | uniq
 [pull]
   rebase = true
 [push]
@@ -19,7 +19,7 @@
 [branch]
   autosetuprebase = always
 [core]
-  excludesfile = /Users/christian/.gitignore_global
+  excludesfile = ~/.gitignore_global
 [merge]
   tool = kdiff3
   keepbackup = false

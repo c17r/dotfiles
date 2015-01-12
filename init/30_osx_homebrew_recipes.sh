@@ -6,23 +6,22 @@ is_osx || return 1
 
 # Homebrew recipes
 recipes=(
-  ansible
+  asciidoc
   bash
-  cowsay
+  dnsmasq
+  gist
   git
-  git-extras
-  htop-osx
+  git-cola
+  gnupg
   hub
-  id3tool
-  lesspipe
-  man2html
   mercurial
   nmap
-  sl
+  python
   ssh-copy-id
-  terminal-notifier
   the_silver_searcher
+  tmux
   tree
+  wget
 )
 
 brew_install_recipes
