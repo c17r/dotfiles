@@ -1,59 +1,33 @@
 [user]
-  name = Ben Alman
-  email = EMAIL
-[core]
-  autocrlf = input
-  whitespace = fix,space-before-tab,tab-in-indent,trailing-space
-  excludesfile = ~/.gitignore_global
-[apply]
-  whitespace = fix
-[alias]
-  br = branch
-  ci = commit
-  co = checkout
-  df = diff
-  g = grep -I
-  lg = log -p
-  pp = !"echo 'Pull'; git pull; echo 'Push'; git push"
-  rb = rbranch
-  rv = review
-  st = status
-  ksdiff = difftool -y -t Kaleidoscope
-[branch "master"]
-  remote = origin
-  merge = refs/heads/master
+  name = Christian Sauer
+  email = sauerc@gmail.com
 [color]
-  ui = auto
-[color "branch"]
-  current = yellow reverse
-  local = yellow
-  remote = green
-[color "diff"]
-  meta = yellow bold
-  frag = magenta bold
-  old = red bold
-  new = green bold
-[color "status"]
-  added = yellow
-  changed = green
-  untracked = cyan
+[alias]
+  s = !git fetch --all --quiet && git status -sb
+  ls = log --pretty=format:'%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]' --decorate --date=short
+  lsv = log --pretty=format:'%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]' --decorate --date=short --numstat
+  tree-log = log --all --graph --decorate --oneline
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
+[pull]
+  rebase = true
+[push]
+  default = upstream
+[ui]
+  color = true
+[color]
+  ui = 1
+[branch]
+  autosetuprebase = always
+[core]
+  excludesfile = /Users/christian/.gitignore_global
 [merge]
-  log = true
-[difftool "Kaleidoscope"]
-  cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
-[rerere]
-  enabled = 1
-[url "git@github.com:"]
-  insteadOf = "gh:"
-  pushInsteadOf = "github:"
-  pushInsteadOf = "git://github.com/"
-[url "git://github.com/"]
-  insteadOf = "github:"
-[url "git@gist.github.com:"]
-  insteadOf = "gst:"
-  pushInsteadOf = "gist:"
-  pushInsteadOf = "git://gist.github.com/"
-[url "git://gist.github.com/"]
-  insteadOf = "gist:"
-[url "git@heroku.com:"]
-  insteadOf = "heroku:"
+  tool = kdiff3
+  keepbackup = false
+[difftool "sourcetree"]
+  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+  path = 
+[mergetool "sourcetree"]
+  cmd = /Applications/Biz Apps/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+  trustExitCode = true
+[http]
+  postbuffer = 524288000
