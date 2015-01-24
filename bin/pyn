@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+mkdir -p ~/ipython-notebooks
+cd ~/ipython-notebooks
+ipython notebook &
