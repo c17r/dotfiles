@@ -1,3 +1,5 @@
+export XML_CATALOG_FILES="/usr/local/etc/xml/catalog"
+
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
 

@@ -1,3 +1,7 @@
+export GIT_EDITOR="subl --wait --new-window"
+if [[ "$SSH_TTY" ]]; then
+  export GIT_EDITOR="vim"
+fi
 
 # Git shortcuts
 
