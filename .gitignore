@@ -1,6 +1,7 @@
 # Lots of junk goes in here.
 /caches/
 /backups/
+/link/.ssh/tmp
 
 # Top secret stuff!
 /link/.ssh/authorized_keys
