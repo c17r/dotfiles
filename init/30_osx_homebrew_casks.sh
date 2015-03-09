@@ -21,6 +21,7 @@ casks=(
   # Applications
   adium
   amazon-music
+  audacity
   box-sync
   caffeine
   chicken
