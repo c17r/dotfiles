@@ -25,6 +25,7 @@ casks=(
   box-sync
   caffeine
   chicken
+  cord
   #Day One
   #Deckset
   disk-inventory-x
@@ -48,7 +49,9 @@ casks=(
   #machoview
   minecraft
   #minimus
+  mysqlworkbench
   parallels-desktop
+  pgadmin3
   #phoneview
   skype
   slack
@@ -63,6 +66,7 @@ casks=(
   vagrant
   virtualbox
   vlc
+  xquartz #for wireshark
   wireshark
   # Quick Look plugins
   betterzipql
@@ -74,7 +78,7 @@ casks=(
   quicklook-json
   quicknfo
   suspicious-package
-  webp-quicklook
+  webpquicklook
   # Color pickers
   colorpicker-developer
   colorpicker-skalacolor
