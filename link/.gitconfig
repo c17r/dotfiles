@@ -1,6 +1,5 @@
-[user]
-  name = Christian Sauer
-  email = sauerc@gmail.com
+[include]
+  path = .gitconfig.local
 [alias]
   s = !git fetch --all --quiet && git status -sb
   ls = log --pretty=format:'%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]' --decorate --date=short
