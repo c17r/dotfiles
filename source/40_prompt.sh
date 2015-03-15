@@ -102,6 +102,14 @@ function prompt_svn() {
   fi
 }
 
+function prompt_venv() {
+  prompt_getcolors
+  if test -n "$VIRTUAL_ENV"; then
+    local name="`basename \"$VIRTUAL_ENV\"`"
+    echo "$c1[$c0$name$c1]$c9"
+  fi
+}
+
 # Maintain a per-execution call stack.
 prompt_stack=()
 trap 'prompt_stack=("${prompt_stack[@]}" "$BASH_COMMAND")' DEBUG
@@ -128,6 +136,8 @@ function prompt_command() {
   PS1="$PS1$(prompt_git)"
   # hg:  [branch:flags]
   PS1="$PS1$(prompt_hg)"
+  # venv: [name]
+  PS1="$PS1$(prompt_venv)"
   # misc: [cmd#:hist#]
   # PS1="$PS1$c1[$c0#\#$c1:$c0!\!$c1]$c9"
   # path: [user@host:path]
