@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-kill `ps | grep "[i]python notebook" | cut -f2 -d " "`
+ps auxwww | egrep "[i]python" | awk '{ print $2 }' | xargs kill
