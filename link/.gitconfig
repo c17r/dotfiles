@@ -10,7 +10,7 @@
 [pull]
   rebase = true
 [push]
-  default = upstream
+	default = current
 [ui]
   color = true
 [color]
@@ -30,3 +30,5 @@
   trustExitCode = true
 [http]
   postbuffer = 524288000
+[remote]
+	pushdefault = origin
