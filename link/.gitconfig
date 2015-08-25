@@ -34,3 +34,5 @@
 	pushdefault = origin
 [mergetool]
 	keepBackup = false
+[gui]
+	diffcontext = 99
