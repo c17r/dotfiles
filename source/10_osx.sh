@@ -10,7 +10,9 @@ export PATH
 alias c="tr -d '\n' | pbcopy"
 
 # make clipboard work easier
-function flip() { [ -t 0 ] && pbpaste || pbcopy }
+function clip() { 
+  [ -t 0 ] && pbpaste || pbcopy 
+}
 
 # Make 'less' more.
 [[ "$(type -P lesspipe.sh)" ]] && eval "$(lesspipe.sh)"
