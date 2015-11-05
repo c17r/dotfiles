@@ -19,6 +19,7 @@
   autosetuprebase = always
 [core]
   excludesfile = ~/.gitignore_global
+	trustctime = false
 [merge]
   tool = kdiff3
   keepbackup = false
