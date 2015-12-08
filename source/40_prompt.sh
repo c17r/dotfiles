@@ -150,4 +150,8 @@ function prompt_command() {
   PS1="$PS1 \$ "
 }
 
-PROMPT_COMMAND="prompt_command"
+function tab_title {
+  echo -n -e "\033]0;${PWD}\007"
+}
+
+PROMPT_COMMAND="tab_title ; prompt_command"
