@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# workbookpro
+wakeonlan 14:10:9f:dd:e4:29
+
+# tvmini
+wakeonlan 00:26:b0:de:28:72
+
+# playbookpro
+wakeonlan b8:f6:b1:19:76:cb

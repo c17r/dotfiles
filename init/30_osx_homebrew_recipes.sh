@@ -22,6 +22,7 @@ recipes=(
   tmux
   tree
   wget
+  wakeonlan
 )
 
 brew_install_recipes
