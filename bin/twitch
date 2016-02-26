@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+if [ ! "$1" ]; then cat <<HELP
+Usage: $(basename "$0") <twitch url>
+HELP
+exit; fi
+
+livestreamer --player-passthrough hls $1 best
