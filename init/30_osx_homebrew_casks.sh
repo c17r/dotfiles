@@ -47,6 +47,7 @@ casks=(
   #   istat-menus
   #   launchbar
   #machoview
+  macdown
   minecraft
   #minimus
   mysqlworkbench
