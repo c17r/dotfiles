@@ -2,5 +2,5 @@
 
 mkdir -p ~/Box\ Sync/Sync/ipython-notebook/
 pushd ~/Box\ Sync/Sync/ipython-notebook/
-ipython notebook &
+jupyter notebook &
 popd
