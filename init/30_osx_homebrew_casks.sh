@@ -17,58 +17,26 @@ brew_install_recipes
 brew cask info this-is-somewhat-annoying 2>/dev/null
 
 # Homebrew casks
-casks=(
-  # Applications
-  adium
+casks_common=(
   amazon-music
-  audacity
   box-sync
   caffeine
-  chicken
-  cord
-  #Day One
-  #Deckset
   disk-inventory-x
   divvy
   dropbox
-  evernote
-  filebot
-  filezilla
   fluid
-  flux
-  gimp
   google-chrome
-  google-earth
   gyazo
-  handbrake
-  handbrakecli
-  hex-fiend
-  #iskysoft pdf editor
-  #   istat-menus
-  #   launchbar
-  #machoview
+  java
   macdown
-  minecraft
-  #minimus
-  mysqlworkbench
-  parallels-desktop
-  pgadmin3
-  #phoneview
+  royal-tsx
   skype
   slack
-  steam
   sublime-text
-  teamspeak-client
+  suspicious-package
   the-unarchiver
-  todoist
-  transmission-remote-gui
   twitterrific
-  utorrent
-  vagrant
-  virtualbox
   vlc
-  xquartz #for wireshark
-  wireshark
   # Quick Look plugins
   betterzipql
   qlcolorcode
@@ -78,12 +46,64 @@ casks=(
   quicklook-csv
   quicklook-json
   quicknfo
-  suspicious-package
   webpquicklook
   # Color pickers
   colorpicker-developer
   colorpicker-skalacolor
 )
+
+casks_work=(
+  filezilla
+  flux
+  gimp
+  gitup
+  hex-fiend
+  kdiff3
+  launchrocket
+  mysqlworkbench
+  parallels-desktop
+  pgadmin3
+  vagrant
+  virtualbox
+  xquartz #for wireshark
+  wireshark
+)
+
+casks_play=(
+  audacity
+  filebot
+  google-earth
+  handbrake
+  handbrakecli
+  minecraft
+  phoneview
+  steam
+  teamspeak-client
+)
+
+casks=(
+  ${casks_common[@]}
+)
+
+read -p "Include work? " include_work
+case $include_work in
+  y*|Y*)
+    casks=(
+      ${casks[@]}
+      ${casks_work[@]}
+    )
+  ;;
+esac
+
+read -p "Include play? " include_play
+case $include_play in
+  y*|Y*)
+    casks=(
+      ${casks[@]}
+      ${casks_play[@]}
+    )
+  ;;
+esac
 
 # Install Homebrew casks.
 casks=($(setdiff "${casks[*]}" "$(brew cask list 2>/dev/null)"))

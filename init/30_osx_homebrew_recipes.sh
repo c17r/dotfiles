@@ -5,9 +5,16 @@ is_osx || return 1
 [[ ! "$(type -P brew)" ]] && e_error "Brew recipes need Homebrew to install." && return 1
 
 # Homebrew recipes
-recipes=(
-  asciidoc
+recipes_common=(
   bash
+  the_silver_searcher
+  tree
+  wget
+  wakeonlan
+)
+
+recipes_work=(
+  asciidoc
   dnsmasq
   gist
   git
@@ -15,15 +22,40 @@ recipes=(
   gnupg
   hub
   mercurial
+  nginx
   nmap
-  python
-  ssh-copy-id
-  the_silver_searcher
+  pyenv
+  pyenv-virtualenvwrapper
+  ruby-build
   tmux
-  tree
-  wget
-  wakeonlan
 )
+
+recipes_play=(
+)
+
+recipes=(
+  ${recipes_common[@]}
+)
+
+read -p "Include work? " include_work
+case $include_work in
+  y*|Y*)
+    recipes=(
+      ${recipes[@]}
+      ${recipes_work[@]}
+    )
+  ;;
+esac
+
+read -p "Include play? " include_play
+case $include_play in
+  y*|Y*)
+    recipes=(
+      ${recipes[@]}
+      ${recipes_play[@]}
+    )
+  ;;
+esac
 
 brew_install_recipes
 
