@@ -26,6 +26,7 @@ recipes_work=(
   nmap
   pyenv
   pyenv-virtualenvwrapper
+  autoenv
   ruby-build
   tmux
 )
