@@ -1,6 +1,7 @@
 
 if which pyenv > /dev/null; then 
 	eval "$(pyenv init -)"
+	pyenv virtualenvwrapper
 fi
 
 # Recursively run all python files through pep8
