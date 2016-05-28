@@ -7,6 +7,13 @@ is_osx || return 1
 # Homebrew recipes
 recipes_common=(
   bash
+  gist
+  git
+  git-cola
+  hub
+  pyenv
+  pyenv-virtualenvwrapper
+  ruby-build
   the_silver_searcher
   tree
   wget
@@ -15,19 +22,12 @@ recipes_common=(
 
 recipes_work=(
   asciidoc
+  autoenv
   dnsmasq
-  gist
-  git
-  git-cola
   gnupg
-  hub
   mercurial
   nginx
   nmap
-  pyenv
-  pyenv-virtualenvwrapper
-  autoenv
-  ruby-build
   tmux
 )
 
