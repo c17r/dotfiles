@@ -25,10 +25,14 @@ casks_common=(
   divvy
   dropbox
   fluid
+  flux
+  goofy
   google-chrome
   gyazo
   java
+  logmein-hamachi
   macdown
+  microsoft-office
   royal-tsx
   skype
   slack
@@ -54,7 +58,6 @@ casks_common=(
 
 casks_work=(
   filezilla
-  flux
   gimp
   gitup
   hex-fiend
@@ -72,6 +75,7 @@ casks_work=(
 casks_play=(
   audacity
   filebot
+  fitbit-connect
   google-earth
   handbrake
   handbrakecli
