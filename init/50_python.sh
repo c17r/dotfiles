@@ -14,5 +14,16 @@ pyenv global $py3 $py2
 pipcmd=$(pyenv which pip)
 
 $pipcmd install --upgrade pip
-
 $pipcmd install --upgrade virtualenvwrapper
+
+pips=(
+	arrow
+	requests
+	grequests
+	jupyter
+	livestreamer
+)
+
+for pip in "${pips[@]}"; do
+	pip install --upgrade $pip
+done
