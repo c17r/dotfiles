@@ -4,6 +4,7 @@ is_osx || return 1
 # APPLE, Y U PUT /usr/bin B4 /usr/local/bin?!
 PATH="/usr/local/bin:$(path_remove /usr/local/bin)"
 PATH="/usr/local/sbin:$(path_remove /usr/local/sbin)"
+[[ -d $DOTFILES/bin ]] && PATH="$DOTFILES/bin:$(path_remove $DOTFILES/bin)" || true
 export PATH
 
 # Trim new lines and copy to clipboard
