@@ -57,6 +57,7 @@ casks_common=(
 )
 
 casks_work=(
+  diffmerge
   filezilla
   gimp
   gitup
