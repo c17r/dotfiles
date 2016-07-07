@@ -1,6 +1,35 @@
 #!/usr/bin/env bash
 
-mkdir -p ~/Box\ Sync/Sync/ipython-notebook/
-pushd ~/Box\ Sync/Sync/ipython-notebook/
-jupyter notebook &
-popd
+function start() {
+	
+	if [ -z "$1" ]
+	then
+		mkdir -p ~/Box\ Sync/Sync/ipython-notebook/
+		pushd ~/Box\ Sync/Sync/ipython-notebook/
+		jupyter notebook &
+		popd
+	else
+		open http://localhost:8888
+	fi
+
+}
+
+function stop() {
+
+	if [ -n "$1" ]
+	then
+		kill $1
+	fi
+
+}
+
+PID=$(ps auxwww | awk '/jupyter/ && !/awk/ { print $2 }')
+
+case "$1" in
+	stop)
+		stop $PID
+		;;
+	*)
+		start $PID
+		;;
+esac

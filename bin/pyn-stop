@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-ps auxwww | egrep "[j]upyter" | awk '{ print $2 }' | xargs kill
