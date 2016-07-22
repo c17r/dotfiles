@@ -25,6 +25,7 @@ recipes_work=(
   asciidoc
   autoenv
   dnsmasq
+  entr
   gnupg
   mercurial
   nginx
