@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 if [ ! "$1" ]; then cat <<HELP
-Usage: $(basename "$0") <twitch url>
+Usage: $(basename "$0") <twitch username>
 HELP
 exit; fi
 
-livestreamer --player-passthrough hls $1 best
+livestreamer --player-passthrough hls http://www.twitch.tv/$1 best
