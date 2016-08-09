@@ -1,3 +1,4 @@
+source $DOTFILES/source/50_python.sh
 
 py2=$(pyenv install --list | grep -ve "[a-zA-Z]" | grep -E "\s+2.\d+\." | tail -1)
 py3=$(pyenv install --list | grep -ve "[a-zA-Z]" | grep -E "\s+3.\d+\." | tail -1)

@@ -1,16 +1,11 @@
 # Initialize rbenv.
 source $DOTFILES/source/50_ruby.sh
 
-# Install Ruby.
-if [[ "$(type -P rbenv)" ]]; then
-  versions=(2.1.3) # 2.0.0-p576 1.9.3-p547)
+rb2=$(rbenv install --list | grep -ve "[a-zA-Z]" | grep -E "\s+2\.\d+\." | tail -1)
 
-  rubies=($(setdiff "${versions[*]}" "$(rbenv whence ruby)"))
-  if (( ${#rubies[@]} > 0 )); then
-    e_header "Installing Ruby versions: ${rubies[*]}"
-    for r in "${rubies[@]}"; do
-      rbenv install "$r"
-      [[ "$r" == "${versions[0]}" ]] && rbenv global "$r"
-    done
-  fi
-fi
+echo rb2 is $rb2
+
+(rbenv versions | grep $rb2 > /dev/null 2>&1) || pyenv install $rb2
+
+rbenv rehash
+rbenv global $rb2

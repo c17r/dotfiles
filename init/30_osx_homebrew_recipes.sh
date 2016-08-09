@@ -12,13 +12,16 @@ recipes_common=(
   git
   git-cola
   hub
+  nave
   pyenv
   pyenv-virtualenvwrapper
+  rbenv
   ruby-build
   the_silver_searcher
   tree
   wget
   wakeonlan
+  z
 )
 
 recipes_work=(
