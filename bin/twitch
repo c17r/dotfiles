@@ -5,4 +5,4 @@ Usage: $(basename "$0") <twitch username>
 HELP
 exit; fi
 
-livestreamer --player-passthrough hls http://www.twitch.tv/$1 best
+livestreamer --player-passthrough hls http://www.twitch.tv/$1 best &
