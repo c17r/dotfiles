@@ -5,4 +5,9 @@ Usage: $(basename "$0") <twitch username>
 HELP
 exit; fi
 
-livestreamer --player-passthrough hls http://www.twitch.tv/$1 best &
+[ -d ~/Applications/VLC.app ] && vlc=~/Applications/VLC.app/Contents/MacOS/VLC
+[ -d /Applications/VLC.app ] && vlc=/Applications/VLC.app/Contents/MacOS/VLC
+
+[ -z "$vlc" ] && echo "couldn't find VLC, exiting..." && exit 1
+
+livestreamer twitch.tv/$1 source -p "$vlc --network-caching 8000 --file-caching 8000" --player-http -v --hls-segment-threads 4 &
