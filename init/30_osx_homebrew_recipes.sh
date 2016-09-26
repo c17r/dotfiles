@@ -28,6 +28,7 @@ recipes_work=(
   asciidoc
   autoenv
   dnsmasq
+  httpie
   entr
   gnupg
   mercurial

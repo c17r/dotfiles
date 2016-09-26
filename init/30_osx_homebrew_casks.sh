@@ -67,6 +67,7 @@ casks_work=(
   mysqlworkbench
   parallels-desktop
   pgadmin3
+  postman
   vagrant
   virtualbox
   xquartz #for wireshark
