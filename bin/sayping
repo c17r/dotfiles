@@ -1,0 +1,30 @@
+address=$1
+prev=255
+if [ -z "$2" ]; then
+	name=$1
+else
+	shift
+	name=$*
+fi
+
+function announce() {
+	now=$(date -j "+%D %T")
+	say $*
+	echo $now - $*
+}
+
+while true; do
+	ping -c 1 $address > /dev/null 2>&1
+	code=$?
+
+	if [ $code != $prev ]; then
+		if [ $code -eq 0 ]; then
+			announce $name is up
+		else
+			announce $name is down
+		fi
+		prev=$code
+	fi
+
+	sleep 1
+done
