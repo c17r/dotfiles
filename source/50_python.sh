@@ -1,8 +1,8 @@
 
 if which pyenv > /dev/null; then 
+	export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
 	eval "$(pyenv init -)"
 	pyenv virtualenvwrapper
-	export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
 fi
 
 if [ -f /usr/local/opt/autoenv/activate.sh ]; then
