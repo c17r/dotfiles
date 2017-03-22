@@ -10,30 +10,21 @@
 [pull]
   rebase = true
 [push]
-	default = current
-[ui]
-  color = true
+  default = current
 [color]
-  ui = 1
+  ui = true
 [branch]
   autosetuprebase = always
 [core]
   excludesfile = ~/.gitignore_global
-	trustctime = false
+  trustctime = false
 [merge]
   tool = kdiff3
-  keepbackup = false
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/Biz Apps/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
 [http]
   postbuffer = 524288000
 [remote]
-	pushdefault = origin
+  pushDefault = origin
 [mergetool]
-	keepBackup = false
+  keepBackup = false
 [gui]
-	diffcontext = 99
+  diffcontext = 99
