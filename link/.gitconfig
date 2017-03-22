@@ -14,7 +14,7 @@
 [color]
   ui = true
 [branch]
-  autosetuprebase = always
+  autoSetupRebase = always
 [core]
   excludesfile = ~/.gitignore_global
   trustctime = false
