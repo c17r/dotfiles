@@ -80,7 +80,6 @@ casks_play=(
   fitbit-connect
   google-earth
   handbrake
-  handbrakecli
   minecraft
   phoneview
   steam

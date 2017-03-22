@@ -38,6 +38,7 @@ recipes_work=(
 )
 
 recipes_play=(
+  handbrake
 )
 
 recipes=(
