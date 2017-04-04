@@ -21,7 +21,7 @@ pips=(
 	arrow
 	requests
 	grequests
-	jupyter
+	notebook
 	livestreamer
 )
 
