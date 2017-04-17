@@ -10,7 +10,7 @@ exit; fi
 
 [ -z "$vlc" ] && echo "couldn't find VLC, exiting..." && exit 1
 
-level=source
+level=best
 [ "$2" ] && level=$2
 
 livestreamer twitch.tv/$1 $level -p "$vlc --network-caching 8000 --file-caching 8000" --player-http -v --hls-segment-threads 4 &
