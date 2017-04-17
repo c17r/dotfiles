@@ -14,7 +14,7 @@ pyenv global $py3 $py2
 
 pipcmd=$(pyenv which pip)
 
-$pipcmd install --upgrade pip
+$pipcmd install --upgrade pip setuptools wheel
 $pipcmd install --upgrade virtualenvwrapper
 
 pips=(
@@ -23,6 +23,7 @@ pips=(
 	grequests
 	notebook
 	livestreamer
+	pipenv
 )
 
 for pip in "${pips[@]}"; do
