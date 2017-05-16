@@ -24,6 +24,9 @@ pips=(
 	notebook
 	livestreamer
 	pipenv
+	beautifulsoup4
+	lxml
+	gspread
 )
 
 for pip in "${pips[@]}"; do
