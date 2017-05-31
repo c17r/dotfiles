@@ -1,0 +1,66 @@
+#!/usr/bin/env python3
+
+import os
+import subprocess
+import sys
+
+
+DIRS_IGNORE = ('.', '..',)
+FILES_IGNORE = ('.DS_Store', )
+SIZES = (
+	(1.0, 'B'),
+	(1024.0, 'K'),
+	(1048576.0, 'M'),
+	(1073741824.0, 'G'),
+	(1099511627776.0, 'T'),
+)
+
+
+def get_items(path):
+	_, dirs, files = next(os.walk(path))
+	dirs = [d for d in dirs if d not in DIRS_IGNORE]
+	files = [f for f in files if f not in FILES_IGNORE]
+	return dirs, files
+
+
+def pretty_size(byte_size):
+	sizes = [s for s in SIZES if byte_size > s[0]]
+	size = sizes[-1]
+	human = byte_size/size[0]
+	return '{0:5.1f}{1[1]}'.format(human, size)
+
+
+def call_du(item):
+	return int(subprocess.check_output(['du', '-d0', item]).split()[0].decode('utf-8')) * 512
+
+
+
+def get_size(dirs, files):
+	for d in dirs:
+		byte_size = call_du(d)
+		yield {
+			'type': 'd',
+			'name': d,
+			'size_raw': byte_size,
+			'size_pretty': pretty_size(byte_size)
+		}
+
+	for f in files:
+		byte_size = call_du(f)
+		yield {
+			'type': 'f',
+			'name': f,
+			'size_raw': byte_size,
+			'size_pretty': pretty_size(byte_size)
+		}
+
+
+def main():
+	path = os.getcwd()
+	items = list(get_size(*get_items(path)))
+	items.sort(key=lambda i:i['size_raw'])
+	for item in items:
+		print(f'{item["size_pretty"]}\t{item["name"]}')
+
+if __name__ == "__main__":
+	sys.exit(main())
