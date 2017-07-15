@@ -34,7 +34,7 @@ def pretty_size(byte_size):
 
 
 def call_du(item):
-	return int(subprocess.check_output(['du', '-d0', item]).split()[0].decode('utf-8')) * 512
+	return int(subprocess.check_output(['du', '-Ld0', item]).split()[0].decode('utf-8')) * 512
 
 
 
