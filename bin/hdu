@@ -24,10 +24,13 @@ def get_items(path):
 
 
 def pretty_size(byte_size):
-	sizes = [s for s in SIZES if byte_size > s[0]]
-	size = sizes[-1]
+	sizes = [s for s in SIZES if byte_size >= s[0]]
+	if len(sizes):
+		size = sizes[-1]
+	else:
+		size = SIZES[0]
 	human = byte_size/size[0]
-	return '{0:5.1f}{1[1]}'.format(human, size)
+	return f'{human:5.1f}{size[1]}'
 
 
 def call_du(item):
