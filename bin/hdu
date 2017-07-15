@@ -62,8 +62,12 @@ def main():
 	path = os.getcwd()
 	items = list(get_size(*get_items(path)))
 	items.sort(key=lambda i:i['size_raw'])
+	raw = 0
 	for item in items:
+		raw += item['size_raw']
 		print(f'{item["size_pretty"]}\t{item["name"]}')
+	print('----')
+	print(f'Total:\t{pretty_size(raw)}')
 
 if __name__ == "__main__":
 	sys.exit(main())
