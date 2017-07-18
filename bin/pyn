@@ -4,8 +4,8 @@ function start() {
 	
 	if [ -z "$1" ]
 	then
-		mkdir -p ~/Box\ Sync/Sync/ipython-notebook/
-		pushd ~/Box\ Sync/Sync/ipython-notebook/
+		mkdir -p ~/odrive/Box/Sync/ipython-notebook/
+		pushd ~/odrive/Box/Sync/ipython-notebook/
 		jupyter notebook &
 		popd
 	else

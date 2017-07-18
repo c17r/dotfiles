@@ -19,11 +19,9 @@ brew cask info this-is-somewhat-annoying 2>/dev/null
 # Homebrew casks
 casks_common=(
   amazon-music
-  box-sync
   caffeine
   disk-inventory-x
   divvy
-  dropbox
   fluid
   flux
   goofy
@@ -33,6 +31,7 @@ casks_common=(
   logmein-hamachi
   macdown
   microsoft-office
+  odrive
   royal-tsx
   skype
   slack
