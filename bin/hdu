@@ -34,7 +34,7 @@ def pretty_size(byte_size):
 
 
 def call_du(item):
-	return int(subprocess.check_output(['du', '-Ld0', item]).split()[0].decode('utf-8')) * 512
+	return int(subprocess.check_output(['du', '-d0', item]).split()[0].decode('utf-8')) * 512
 
 
 
@@ -65,7 +65,7 @@ def main():
 	raw = 0
 	for item in items:
 		raw += item['size_raw']
-		print(f'{item["size_pretty"]}\t{item["name"]}')
+		print(f'{item["size_pretty"]}\t{item["name"]}{"/" if item["type"] == "d" else ""}')
 	print('----')
 	print(f'Total:\t{pretty_size(raw)}')
 
