@@ -39,6 +39,7 @@ casks_common=(
   suspicious-package
   the-unarchiver
   twitterrific
+  visual-studio-code
   vlc
   # Quick Look plugins
   betterzipql
