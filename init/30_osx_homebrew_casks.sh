@@ -56,6 +56,7 @@ casks_common=(
 )
 
 casks_work=(
+  datagrip
   diffmerge
   filezilla
   gimp
@@ -67,9 +68,12 @@ casks_work=(
   parallels-desktop
   pgadmin3
   postman
+  pycharm
+  rider
   vagrant
   virtualbox
   xquartz #for wireshark
+  webstorm
   wireshark
 )
 
