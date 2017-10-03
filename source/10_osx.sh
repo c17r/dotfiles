@@ -7,6 +7,10 @@ PATH="/usr/local/sbin:$(path_remove /usr/local/sbin)"
 [[ -d $DOTFILES/bin ]] && PATH="$DOTFILES/bin:$(path_remove $DOTFILES/bin)" || true
 export PATH
 
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+
 # Trim new lines and copy to clipboard
 alias c="tr -d '\n' | pbcopy"
 
