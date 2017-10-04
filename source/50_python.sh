@@ -1,5 +1,5 @@
 
-if which pyenv > /dev/null; then 
+if which pyenv > /dev/null; then
 	export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
 	eval "$(pyenv init -)"
 	pyenv virtualenvwrapper
@@ -14,3 +14,5 @@ alias allpep8='find . -name "*.py" -print0 | xargs -0 pep8'
 
 # Recusively delete all pre-compiled python files
 alias pyclean='find -E . \( \( -type f -regex ".*\.py(c|o|\.class)$" \) -or \( -type d -name "__pycache__" \) \) -delete'
+
+export PIPENV_DEFAULT_PYTHON_VERSION=3.6
