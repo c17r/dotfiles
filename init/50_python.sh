@@ -32,3 +32,7 @@ pips=(
 for pip in "${pips[@]}"; do
 	pip install --upgrade $pip
 done
+
+if [[ ! -f ~/.pypirc ]]; then
+	ln -nsf ~/odrive/Box/Sync/secrets/.pypirc
+fi
