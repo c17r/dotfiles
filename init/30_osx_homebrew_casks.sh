@@ -54,6 +54,8 @@ casks_common=(
   # Color pickers
   colorpicker-developer
   colorpicker-skalacolor
+  dotnet
+  dotnet-sdk
 )
 
 casks_work=(

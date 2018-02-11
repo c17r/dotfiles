@@ -3,6 +3,9 @@ if [[ "$SSH_TTY" ]]; then
   export GIT_EDITOR="vim"
 fi
 
+# Hub as an alias for git, fancy Github commands
+eval "$(hub alias -s)"
+
 # Git shortcuts
 
 alias g='git'
