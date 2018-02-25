@@ -24,3 +24,16 @@ function pyenv_install() {
 	LDFLAGS="-L$(brew --prefix openssl)/lib -L$(brew --prefix zlib)/lib -L$(brew --prefix sqlite)/lib" \
 	pyenv install -f $1
 }
+
+function pyenv_latest_py2() {
+	_pyenv_search "\s2\.7"
+}
+
+function pyenv_latest_py3() {
+	_pyenv_search "\s3\.6"
+	_pyenv_search "\s3\.7"
+}
+
+function _pyenv_search() {
+	pyenv install --list | egrep "$1" | tail -1
+}
