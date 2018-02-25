@@ -1,0 +1,37 @@
+#!/usr/bin/env ruby
+
+require 'io/console'
+require 'open-uri'
+require 'digest'
+
+puts "The 5-character prefix of the password's SHA-1 hash will be sent."
+puts "For details, see https://www.troyhunt.com/ive-just-launched-pwned-passwords-version-2/"
+print 'Password (hidden): '
+password = $stdin.noecho(&:gets).strip
+puts
+
+hash = Digest::SHA1.hexdigest(password).upcase
+prefix = hash[0...5]
+
+url = "https://api.pwnedpasswords.com/range/#{prefix}"
+print "Requesting #{url}. Continue (y/n)? "
+
+if $stdin.gets.strip.downcase[0] != 'y'
+  puts 'Canceled.'
+  exit
+end
+
+pwned = open(url) do |response|
+  Hash[response.each_line.map { |line|
+    suffix, count = line.strip.split(':')
+    [(prefix + suffix).upcase, count.to_i]
+  }]
+end
+
+count = pwned[hash]
+print "Password with SHA-1 hash #{hash} "
+if count
+  puts "has been pwned. Seen #{count} time#{count == 1 ? '' : 's'}."
+else
+  puts "has not been pwned."
+end
