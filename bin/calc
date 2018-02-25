@@ -1,3 +1,0 @@
-#!/bin/sh
-
-echo "scale=2;$*" | bc

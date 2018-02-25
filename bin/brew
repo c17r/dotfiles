@@ -1,4 +1,0 @@
-#!/usr/bin/env sh
-source $DOTFILES/bin/dotfiles "source"
-
-/usr/bin/env PATH="$(path_remove $(pyenv root)/shims)" /usr/local/bin/brew "$@"
