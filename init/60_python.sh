@@ -22,7 +22,7 @@ pips=(
 	requests
 	grequests
 	notebook
-	livestreamer
+	streamlink
 	pipenv
 	beautifulsoup4
 	lxml
