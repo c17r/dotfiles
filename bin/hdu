@@ -37,7 +37,6 @@ def call_du(item):
 	return int(subprocess.check_output(['du', '-d0', item]).split()[0].decode('utf-8')) * 512
 
 
-
 def get_size(dirs, files):
 	for d in dirs:
 		byte_size = call_du(d)
