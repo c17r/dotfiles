@@ -14,6 +14,7 @@ recipes_common=(
   git
   git-cola
   hub
+  mas
   nave
   pyenv
   pyenv-virtualenvwrapper

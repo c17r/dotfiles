@@ -32,6 +32,7 @@ casks_common=(
   macdown
   microsoft-office
   odrive
+  phoneview
   royal-tsx
   skype
   slack
@@ -82,12 +83,9 @@ casks_work=(
 
 casks_play=(
   audacity
-  filebot
-  fitbit-connect
   google-earth
   handbrake
   minecraft
-  phoneview
   steam
   teamspeak-client
 )
