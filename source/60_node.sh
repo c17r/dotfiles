@@ -26,11 +26,11 @@ function nave_install() {
 
 # Global npm modules to install.
 npm_globals=(
-  gulp-cli
+  @angular/cli
   grunt-cli
-  yarn
+  gulp-cli
   linken
-  node-inspector
+  yarn
   yo
 )
 
