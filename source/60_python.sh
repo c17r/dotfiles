@@ -30,10 +30,13 @@ function pyenv_latest_py2() {
 }
 
 function pyenv_latest_py3() {
+	_pyenv_search "\s3\.3"
+	_pyenv_search "\s3\.4"
+	_pyenv_search "\s3\.5"
 	_pyenv_search "\s3\.6"
 	_pyenv_search "\s3\.7"
 }
 
 function _pyenv_search() {
-	pyenv install --list | egrep "$1" | tail -1
+	pyenv install --list | grep -ve "[a-zA-Z]" | egrep "$1" | tail -1
 }
