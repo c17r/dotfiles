@@ -27,6 +27,11 @@ pips=(
 	beautifulsoup4
 	lxml
 	gspread
+	oauth2client
+	em-keyboard
+	praw
+	youtube-dl
+	Pillow
 )
 
 for pip in "${pips[@]}"; do
