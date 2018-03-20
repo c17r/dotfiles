@@ -28,7 +28,7 @@ pips=(
 	lxml
 	gspread
 	oauth2client
-	em-keyboard
+	em-keyboard-py3
 	praw
 	youtube-dl
 	Pillow
