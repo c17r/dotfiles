@@ -19,7 +19,7 @@
   excludesfile = ~/.gitignore_global
   trustctime = false
 [merge]
-  tool = kdiff3
+	tool = extMerge
 [http]
   postbuffer = 524288000
 [remote]
@@ -30,3 +30,8 @@
   diffcontext = 99
 [cola]
 	spellcheck = false
+[mergetool "extMerge"]
+	cmd = extMerge.sh \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+	trustExitCode = false
+[diff]
+	external = extDiff.sh
