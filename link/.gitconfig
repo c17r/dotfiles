@@ -18,20 +18,18 @@
 [core]
   excludesfile = ~/.gitignore_global
   trustctime = false
-[merge]
-	tool = extMerge
 [http]
   postbuffer = 524288000
 [remote]
   pushDefault = origin
-[mergetool]
-  keepBackup = false
 [gui]
   diffcontext = 99
 [cola]
 	spellcheck = false
+[merge]
+	tool = extMerge
 [mergetool "extMerge"]
-	cmd = extMerge.sh \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+	cmd = extMerge.sh "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
 	trustExitCode = false
 [diff]
 	external = extDiff.sh
