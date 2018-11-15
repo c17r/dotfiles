@@ -57,6 +57,7 @@ casks_common=(
   colorpicker-skalacolor
   dotnet
   dotnet-sdk
+  notion
 )
 
 casks_work=(
