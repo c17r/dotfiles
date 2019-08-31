@@ -20,7 +20,7 @@ export PYTHONDONTWRITEBYTECODE=1
 
 function pyenv_install() {
 	[[ ! "$1" ]] && echo "Specify a python version" && return 1
-	CFLAGS="-I$(brew --prefix openssl)/include -I$(brew --prefix zlib)/include -I$(brew --prefix sqlite)/include" \
+	CFLAGS="-I$(xcrun --show-sdk-path)/usr/include -I$(brew --prefix openssl)/include -I$(brew --prefix zlib)/include -I$(brew --prefix sqlite)/include" \
 	LDFLAGS="-L$(brew --prefix openssl)/lib -L$(brew --prefix zlib)/lib -L$(brew --prefix sqlite)/lib" \
 	pyenv install -f $1
 }
@@ -30,8 +30,6 @@ function pyenv_latest_py2() {
 }
 
 function pyenv_latest_py3() {
-	_pyenv_search "\s3\.3"
-	_pyenv_search "\s3\.4"
 	_pyenv_search "\s3\.5"
 	_pyenv_search "\s3\.6"
 	_pyenv_search "\s3\.7"
