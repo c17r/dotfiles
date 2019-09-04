@@ -24,6 +24,7 @@
   pushDefault = origin
 [gui]
 	diffcontext = 10
+	tabsize = 4
 [cola]
 	spellcheck = false
 [merge]

@@ -6,6 +6,7 @@ if which pyenv > /dev/null; then
 fi
 
 if [ -f /usr/local/opt/autoenv/activate.sh ]; then
+	export AUTOENV_ENV_FILENAME=".pyenv"
 	source /usr/local/opt/autoenv/activate.sh
 fi
 
