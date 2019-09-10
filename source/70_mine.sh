@@ -52,7 +52,7 @@ function twitch() {
 	level=best
 	[ "$2" ] && level=$2
 
-	streamlink twitch.tv/$1 $level -p "$vlc --auhal-volume 128 --network-caching 8000 --file-caching 8000" --player-http -v --hls-segment-threads 4 &
+	streamlink twitch.tv/$1 $level -p "$vlc --auhal-volume 128 --network-caching 500 --file-caching 500" --player-http -v --hls-segment-threads 4 &
 }
 
 
