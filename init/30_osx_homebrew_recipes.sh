@@ -7,6 +7,7 @@ is_osx || return 1
 # Homebrew recipes
 recipes_common=(
   bash
+  composer
   coreutils
   editorconfig
   findutils
