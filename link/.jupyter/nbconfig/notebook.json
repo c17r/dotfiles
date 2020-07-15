@@ -3,5 +3,9 @@
     "cm_config": {
       "lineNumbers": true
     }
+  },
+  "Notebook": {
+    "Header": true,
+    "Toolbar": true
   }
 }

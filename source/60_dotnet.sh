@@ -1,1 +1,2 @@
-export ASPNETCORE_ENVIRONMENT=Development
+export DOTNET_ENVIRONMENT=Development
+export DOTNET_CLI_TELEMETRY_OPTOUT=true
