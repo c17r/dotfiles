@@ -32,6 +32,7 @@ npm_globals=(
   linken
   yarn
   yo
+  npm-check-updates
 )
 
 # Update npm and install global modules.
