@@ -17,11 +17,12 @@ recipes_common=(
   hub
   mas
   nave
+  poetry
   pyenv
   pyenv-virtualenvwrapper
   rbenv
+  ripgrep
   ruby-build
-  the_silver_searcher
   tree
   wget
   wakeonlan
@@ -33,10 +34,10 @@ recipes_work=(
   autoenv
   dnsmasq
   httpie
+  jq
   entr
   gnupg
-  mercurial
-  nginx
+  caddy
   nmap
   tmux
 )
