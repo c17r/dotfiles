@@ -28,15 +28,13 @@ casks_common=(
   google-chrome
   gyazo
   java
-  logmein-hamachi
   macdown
   microsoft-office
   odrive
   phoneview
   royal-tsx
-  skype
-  slack
   sublime-text
+  sublime-merge
   suspicious-package
   the-unarchiver
   twitterrific
@@ -55,27 +53,20 @@ casks_common=(
   # Color pickers
   colorpicker-developer
   colorpicker-skalacolor
-  dotnet
   dotnet-sdk
-  notion
 )
 
 casks_work=(
+  docker
   datagrip
   diffmerge
   filezilla
   gimp
-  gitup
   hex-fiend
-  kdiff3
   launchrocket
-  mysqlworkbench
-  parallels-desktop
-  pgadmin3
   postman
   pycharm
   rider
-  vagrant
   virtualbox
   xquartz #for wireshark
   webstorm
@@ -88,7 +79,6 @@ casks_play=(
   handbrake
   minecraft
   steam
-  teamspeak-client
 )
 
 casks=(
