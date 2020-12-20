@@ -4,7 +4,7 @@ is_osx || return 1
 # Install Homebrew.
 if [[ ! "$(type -P /usr/local/bin/brew)" ]]; then
   e_header "Installing Homebrew"
-  true | ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 fi
 
 # Exit if, for some reason, Homebrew is not installed.
