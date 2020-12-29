@@ -11,10 +11,12 @@ recipes_common=(
   coreutils
   editorconfig
   findutils
+  font-jetbrains-mono
   gist
   git
   git-cola
   hub
+  java
   mas
   nave
   poetry
@@ -24,20 +26,20 @@ recipes_common=(
   ripgrep
   ruby-build
   tree
-  wget
   wakeonlan
+  wget
   z
 )
 
 recipes_work=(
   asciidoc
-  autoenv
+  caddy
   dnsmasq
+  entr
+  gh
+  gnupg
   httpie
   jq
-  entr
-  gnupg
-  caddy
   nmap
   tmux
 )

@@ -2,16 +2,15 @@
 is_osx || return 1
 
 # Exit if Homebrew is not installed.
-[[ ! "$(type -P /usr/local/bin/brew)" ]] && e_error "Brew casks need Homebrew to install." && return 1
+[[ ! "$(type -P brew)" ]] && e_error "Brew casks need Homebrew to install." && return 1
 
 # Ensure the cask keg and recipe are installed.
-kegs=(caskroom/cask)
+kegs=(
+  homebrew/cask-drivers
+  homebrew/cask-fonts
+  homebrew/cask-versions
+)
 brew_tap_kegs
-recipes=(brew-cask)
-brew_install_recipes
-
-# Exit if, for some reason, cask is not installed.
-[[ ! "$(brew ls --versions brew-cask)" ]] && e_error "Brew-cask failed to install." && return 1
 
 # Hack to show the first-run brew-cask password prompt immediately.
 brew cask info this-is-somewhat-annoying 2>/dev/null
@@ -19,27 +18,29 @@ brew cask info this-is-somewhat-annoying 2>/dev/null
 # Homebrew casks
 casks_common=(
   amazon-music
+  appcleaner
   caffeine
+  carbon-copy-cloner
   disk-inventory-x
   divvy
   fluid
   flux
-  goofy
   google-chrome
   gyazo
-  java
   macdown
   microsoft-office
   odrive
-  phoneview
+  # phoneview # install manually now
   royal-tsx
-  sublime-text
   sublime-merge
+  sublime-text
   suspicious-package
   the-unarchiver
   twitterrific
   visual-studio-code
   vlc
+  zoom
+
   # Quick Look plugins
   betterzipql
   qlcolorcode
@@ -50,6 +51,7 @@ casks_common=(
   quicklook-json
   quicknfo
   webpquicklook
+  
   # Color pickers
   colorpicker-developer
   colorpicker-skalacolor
@@ -57,27 +59,26 @@ casks_common=(
 )
 
 casks_work=(
-  docker
   datagrip
   diffmerge
-  filezilla
+  docker
   gimp
-  github
   hex-fiend
   launchrocket
   postman
   pycharm
   rider
   virtualbox
-  xquartz #for wireshark
   webstorm
   wireshark
+  xquartz #for wireshark
 )
 
 casks_play=(
   audacity
   google-earth
   handbrake
+  messenger
   minecraft
   steam
 )
@@ -107,13 +108,13 @@ case $include_play in
 esac
 
 # Install Homebrew casks.
-casks=($(setdiff "${casks[*]}" "$(brew cask list 2>/dev/null)"))
+casks=($(setdiff "${casks[*]}" "$(brew list --cask 2>/dev/null)"))
 if (( ${#casks[@]} > 0 )); then
   e_header "Installing Homebrew casks: ${casks[*]}"
   for cask in "${casks[@]}"; do
     brew install --cask $cask
   done
-  brew cask cleanup
+  brew cleanup
 fi
 
 # Work around colorPicker symlink issue.
