@@ -123,7 +123,8 @@ function __prompt_command() {
   PS1="\n"
   __prompt_vcs_info=()
   # git: [branch:flags]
-  __prompt_git || \
+  #__prompt_git || \
+  __prompt_git
   # hg:  [branch:bookmark:flags]
   #__prompt_hg || \
   # svn: [repo:lastchanged]
