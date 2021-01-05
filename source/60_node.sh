@@ -1,5 +1,4 @@
-export PATH
-PATH=~/.nave/installed/default/bin:"$(path_remove ~/.nave/installed/*/bin)"
+export PATH=~/.nave/installed/default/bin:"$(path_remove ~/.nave/installed/*/bin)"
 
 # Set a specific version of node as the "default" for "nave use default"
 function nave_default() {
