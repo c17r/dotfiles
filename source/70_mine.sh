@@ -36,11 +36,21 @@ function pyn() {
 			fi
 			;;
 		*)
+
+			case "$2" in
+				lab)
+					style=lab
+					;;
+				*)
+					style=notebook
+					;;
+			esac
+
 			if [ -z "$pid" ]
 			then
 				mkdir -p ~/odrive/Box/Sync/ipython-notebook/
 				pushd ~/odrive/Box/Sync/ipython-notebook/
-				jupyter notebook &
+				jupyter $style &
 				popd
 			else
 				open http://localhost:8888
@@ -48,7 +58,6 @@ function pyn() {
 			;;
 	esac
 }
-
 
 if is_osx; then
 
