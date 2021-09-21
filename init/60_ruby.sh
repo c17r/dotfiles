@@ -1,5 +1,5 @@
 # Initialize rbenv.
-source $DOTFILES/source/50_ruby.sh
+source $DOTFILES/source/60_ruby.sh
 
 rb2=$(rbenv install --list | grep -ve "[a-zA-Z]" | grep -E "\s+2\.\d+\." | tail -1)
 
