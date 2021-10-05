@@ -23,7 +23,7 @@ function clip() {
 [[ "$(type -P lesspipe.sh)" ]] && eval "$(lesspipe.sh)"
 
 # Start ScreenSaver. This will lock the screen if locking is enabled.
-alias ss="open /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app"
+alias ss="open -a ScreenSaverEngine.app"
 
 # Create a new Parallels VM from template, replacing the existing one.
 function vm_template() {
