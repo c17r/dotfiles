@@ -1,7 +1,6 @@
-[include]
-  path = .gitconfig.local
 [alias]
          s = !git fetch --all --quiet && git status -sb
+        sw = switch
         sb = status -sb 
         ls = log --pretty=format:'%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s %C(green)[%an]' --decorate --date=short
        lsv = log --pretty=format:'%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s %C(green)[%an]' --decorate --date=short --numstat
@@ -17,7 +16,7 @@
 [branch]
   autoSetupRebase = always
 [core]
-	excludesfile = /Users/christian/.gitignore_global
+	excludesfile = ~/.gitignore_global
   trustctime = false
 [http]
   postbuffer = 524288000
@@ -28,19 +27,7 @@
 	tabsize = 4
 [cola]
 	spellcheck = false
-[merge]
-	tool = extMerge
-[mergetool "extMerge"]
-	cmd = extMerge.sh "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
-	trustExitCode = false
-  keepBackup = false
-[diff]
-	external = extDiff.sh
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
 [init]
 	defaultBranch = main
+[include]
+  path = ~/.gitconfig.local

@@ -7,5 +7,17 @@
   "Notebook": {
     "Header": true,
     "Toolbar": true
+  },
+  "keys": {
+    "command": {
+      "unbind": [
+        "0,0"
+      ],
+      "bind": {
+        "0,0": "jupyter-notebook:restart-kernel",
+        "c,c": "jupyter-notebook:clear-cell-output",
+        "9,9": "jupyter-notebook:clear-cell-output"
+      }
+    }
   }
 }

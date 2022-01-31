@@ -117,11 +117,6 @@ if is_osx; then
 		streamlink twitch.tv/$1 $level -p "$vlc --auhal-volume 128 --network-caching 500 --file-caching 500" --player-http -v --hls-segment-threads 4 &
 	}
 
-
-	function brew() {
-		/usr/bin/env PATH="$(path_remove $(pyenv root)/shims)" /usr/local/bin/brew "$@"
-	}
-
 	function finder-show-files() {
 		defaults write com.apple.finder AppleShowAllFiles YES
 		killall Finder /System/Library/CoreServices/Finder.app
