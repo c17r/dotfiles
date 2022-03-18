@@ -13,6 +13,8 @@ if [ -f /usr/local/opt/autoenv/activate.sh ]; then
 	source /usr/local/opt/autoenv/activate.sh
 fi
 
+export PATH="$HOME/.poetry/bin:$(path_remove $HOME/.poetry/bin)"
+
 # Recursively run all python files through pep8
 alias allpep8='find . -name "*.py" -print0 | xargs -0 pep8'
 
