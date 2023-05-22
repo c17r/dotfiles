@@ -23,6 +23,7 @@ casks_common=(
   carbon-copy-cloner
   disk-inventory-x
   divvy
+  flameshot
   fluid
   flux
   google-chrome
@@ -31,10 +32,12 @@ casks_common=(
   microsoft-office
   odrive
   # phoneview # install manually now
+  rectangle
   royal-tsx
   sublime-merge
   sublime-text
   suspicious-package
+  tailscale
   the-unarchiver
   twitterrific
   visual-studio-code
@@ -51,7 +54,7 @@ casks_common=(
   quicklook-json
   quicknfo
   webpquicklook
-  
+
   # Color pickers
   colorpicker-developer
   colorpicker-skalacolor
@@ -76,7 +79,6 @@ casks_work=(
 
 casks_play=(
   audacity
-  google-earth
   handbrake
   messenger
   minecraft
@@ -108,13 +110,13 @@ case $include_play in
 esac
 
 # Install Homebrew casks.
-casks=($(setdiff "${casks[*]}" "$(brew list --cask 2>/dev/null)"))
+casks=($(setdiff "${casks[*]}" "$($BREW_BIN list --cask 2>/dev/null)"))
 if (( ${#casks[@]} > 0 )); then
   e_header "Installing Homebrew casks: ${casks[*]}"
   for cask in "${casks[@]}"; do
-    brew install --cask $cask
+    $BREW_BIN install --cask $cask
   done
-  brew cleanup
+  $BREW_BIN cleanup
 fi
 
 # Work around colorPicker symlink issue.

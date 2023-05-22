@@ -5,3 +5,5 @@ source $DOTFILES/source/60_node.sh
 nave_install stable
 
 nave usemain stable
+
+npm install -g npm

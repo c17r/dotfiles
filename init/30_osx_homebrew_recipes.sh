@@ -2,13 +2,14 @@
 is_osx || return 1
 
 # Exit if Homebrew is not installed.
-[[ ! "$(type -P brew)" ]] && e_error "Brew recipes need Homebrew to install." && return 1
+[[ ! "$(type -P $BREW_BIN)" ]] && e_error "Brew recipes need Homebrew to install." && return 1
 
 # Homebrew recipes
 recipes_common=(
   bash
   composer
   coreutils
+  direnv
   editorconfig
   findutils
   font-jetbrains-mono
@@ -77,7 +78,7 @@ brew_install_recipes
 # Misc cleanup!
 
 # This is where brew stores its binary symlinks
-local binroot="$(brew --config | awk '/HOMEBREW_PREFIX/ {print $2}')"/bin
+local binroot="$($BREW_BIN --config | awk '/HOMEBREW_PREFIX/ {print $2}')"/bin
 
 # htop
 if [[ "$(type -P $binroot/htop)" ]] && [[ "$(stat -L -f "%Su:%Sg" "$binroot/htop")" != "root:wheel" || ! "$(($(stat -L -f "%DMp" "$binroot/htop") & 4))" ]]; then

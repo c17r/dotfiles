@@ -31,3 +31,6 @@
 	defaultBranch = main
 [include]
   path = ~/.gitconfig.local
+[user]
+	name = Christian Sauer
+	email = sauerc@gmail.com

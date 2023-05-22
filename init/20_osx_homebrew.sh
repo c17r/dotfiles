@@ -2,18 +2,22 @@
 is_osx || return 1
 
 # Install Homebrew.
-if [[ ! "$(type -P /usr/local/bin/brew)" ]]; then
+if [[ ! "$(type -P /opt/homebrew/bin/brew)" ]]; then
   e_header "Installing Homebrew"
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 fi
 
+BREW_PATH=/opt/homebrew
+export BREW_BIN=$BREW_PATH/bin/brew
+
+eval $($BREW_BIN shellenv | grep -v "export PATH")
+
 # Exit if, for some reason, Homebrew is not installed.
-[[ ! "$(type -P /usr/local/bin/brew)" ]] && e_error "Homebrew failed to install." && return 1
+[[ ! "$(type -P $BREW_BIN)" ]] && e_error "Homebrew failed to install." && return 1
 
 e_header "Updating Homebrew"
-brew doctor
-brew update
-
+$BREW_BIN doctor
+$BREW_BIN update
 # Functions used in subsequent init scripts.
 
 # Tap Homebrew kegs.
@@ -22,7 +26,7 @@ function brew_tap_kegs() {
   if (( ${#kegs[@]} > 0 )); then
     e_header "Tapping Homebrew kegs: ${kegs[*]}"
     for keg in "${kegs[@]}"; do
-      brew tap $keg
+      $BREW_BIN tap $keg
     done
   fi
 }
@@ -33,7 +37,7 @@ function brew_install_recipes() {
   if (( ${#recipes[@]} > 0 )); then
     e_header "Installing Homebrew recipes: ${recipes[*]}"
     for recipe in "${recipes[@]}"; do
-      brew install $recipe
+      $BREW_BIN install $recipe
     done
   fi
 }
