@@ -16,6 +16,7 @@ recipes_common=(
   gist
   git
   git-cola
+  goenv
   hub
   java
   mas
