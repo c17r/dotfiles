@@ -34,3 +34,5 @@
 [user]
 	name = Christian Sauer
 	email = sauerc@gmail.com
+[blame]
+  ignoreRevsFile = .git-blame-ignore-revs

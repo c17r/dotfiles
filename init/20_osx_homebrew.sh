@@ -10,7 +10,7 @@ fi
 BREW_PATH=/opt/homebrew
 export BREW_BIN=$BREW_PATH/bin/brew
 
-eval $($BREW_BIN shellenv | grep -v "export PATH")
+eval $($BREW_BIN shellenv)
 
 # Exit if, for some reason, Homebrew is not installed.
 [[ ! "$(type -P $BREW_BIN)" ]] && e_error "Homebrew failed to install." && return 1
