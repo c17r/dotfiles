@@ -30,7 +30,7 @@ pips=(
 	oauth2client
 	em-keyboard-py3
 	praw
-	youtube-dl
+	yt-dlp
 	Pillow
 )
 
