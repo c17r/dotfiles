@@ -36,3 +36,5 @@
 	email = sauerc@gmail.com
 [blame]
   ignoreRevsFile = .git-blame-ignore-revs
+[advice]
+	skippedCherryPicks = false
