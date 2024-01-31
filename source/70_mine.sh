@@ -97,25 +97,25 @@ if is_osx; then
 	}
 
 
-	function twitch() {
-		if [ ! "$1" ]; then
-			echo "Usage: <twitch username>"
-			exit 0
-		fi
-
-		[ -d ~/Applications/VLC.app ] && vlc=~/Applications/VLC.app/Contents/MacOS/VLC
-		[ -d /Applications/VLC.app ] && vlc=/Applications/VLC.app/Contents/MacOS/VLC
-
-		if [ -z "$vlc" ]; then
-			echo "Couldn't find VLC, exiting..."
-			exit 1
-		fi
-
-		level=best
-		[ "$2" ] && level=$2
-
-		streamlink twitch.tv/$1 $level -p "$vlc --auhal-volume 128 --network-caching 500 --file-caching 500" --player-http -v --hls-segment-threads 4 &
-	}
+#	function twitch() {
+#		if [ ! "$1" ]; then
+#			echo "Usage: <twitch username>"
+#			exit 0
+#		fi
+#
+#		[ -d ~/Applications/VLC.app ] && vlc=~/Applications/VLC.app/Contents/MacOS/VLC
+#		[ -d /Applications/VLC.app ] && vlc=/Applications/VLC.app/Contents/MacOS/VLC
+#
+#		if [ -z "$vlc" ]; then
+#			echo "Couldn't find VLC, exiting..."
+#			exit 1
+#		fi
+#
+#		level=best
+#		[ "$2" ] && level=$2
+#
+#		streamlink twitch.tv/$1 $level -p "$vlc --auhal-volume 128 --network-caching 500 --file-caching 500" --player-http -v --hls-segment-threads 4 &
+#	}
 
 	function finder-show-files() {
 		defaults write com.apple.finder AppleShowAllFiles YES

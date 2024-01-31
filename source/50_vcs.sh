@@ -7,39 +7,22 @@ fi
 eval "$(hub alias -s)"
 
 # Git shortcuts
-
-alias g='git'
-function ga() { git add "${@:-.}"; } # Add all files by default
-alias gp='git push'
-alias gpa='gp --all'
 alias gu='git pull'
-alias gl='git log'
-alias gg='gl --decorate --oneline --graph --date-order --all'
-alias gs='git status'
-alias gst='gs'
-alias gd='git diff'
-alias gdc='gd --cached'
-alias gm='git commit -m'
-alias gma='git commit -am'
-alias gb='git branch'
-alias gba='git branch -a'
-function gc() { git checkout "${@:-master}"; } # Checkout master by default
-alias gco='gc'
-alias gcb='gc -b'
-alias gbc='gc -b' # Dyslexia
-alias gr='git remote'
-alias grv='gr -v'
-#alias gra='git remote add'
-alias grr='git remote rm'
-alias gcl='git clone'
+alias gua='git pull --autostash'
 alias gcd='git rev-parse 2>/dev/null && cd "./$(git rev-parse --show-cdup)"'
-alias ga='git branch | grep -v "zeded/" | grep -v "main" | grep -v "master"'
+alias gcp='git cherry-pick'
+alias ga='git branch | grep -vE "(zeded|main|master|WIP)"'
+alias gs='git switch'
+
+function gsc() {
+  git switch -c $1 origin/main
+}
 
 # Current branch or SHA if detached.
 alias gbs='git branch | perl -ne '"'"'/^\* (?:\(detached from (.*)\)|(.*))/ && print "$1$2"'"'"''
 
 # Run commands in each subdirectory.
-alias gu-all='eachdir git pull'
+alias gua-all='eachdir git pull --autostash'
 alias gp-all='eachdir git push'
 alias gs-all='eachdir git status'
 
