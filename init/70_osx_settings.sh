@@ -63,3 +63,6 @@ defaults write com.apple.Music userWantsPlaybackNotifications -bool false
 defaults write com.apple.LaunchServices LSQuarantine -bool false
 
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
+
+defaults -currentHost write -globalDomain NSStatusItemSelectionPadding -int 6
+defaults -currentHost write -globalDomain NSStatusItemSpacing -int 6
