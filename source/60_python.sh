@@ -43,6 +43,10 @@ function pyenv_latest_py3() {
 	_pyenv_search "\s3\.11"
 	_pyenv_search "\s3\.12"
 	_pyenv_search "\s3\.13"
+	_pyenv_search "\s3\.14"
+	_pyenv_search "\s3\.15"
+	_pyenv_search "\s3\.16"
+	_pyenv_search "\s3\.17"
 }
 
 function _pyenv_search() {
