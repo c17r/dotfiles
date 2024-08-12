@@ -13,6 +13,7 @@ alias gcd='git rev-parse 2>/dev/null && cd "./$(git rev-parse --show-cdup)"'
 alias gcp='git cherry-pick'
 alias ga='git branch | grep -vE "(zeded|main|master|WIP)"'
 alias gs='git switch'
+alias gsm='git switch main'
 
 function gsc() {
   git switch -c $1 origin/main
