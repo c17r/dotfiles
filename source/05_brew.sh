@@ -10,3 +10,7 @@ export PATH="$HOMEBREW_BIN:$(path_remove $HOMEBREW_BIN)"
 function brew() {
 	/usr/bin/env PATH="$(path_remove $(pyenv root)/shims)" /opt/homebrew/bin/brew "$@"
 }
+
+function brew-update() {
+	brew update && brew upgrade && brew pyenv-sync && brew rbenv-sync
+}

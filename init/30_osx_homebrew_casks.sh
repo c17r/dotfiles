@@ -43,6 +43,7 @@ casks_common=(
   visual-studio-code
   vlc
   zoom
+  ghostty
 
   # Quick Look plugins
   betterzipql

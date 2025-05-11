@@ -40,6 +40,10 @@ function md() {
   mkdir -p "$@" && cd "$@"
 }
 
+function paths() {
+  echo "$PATH" | tr ':' '\n' | grep -v '^$' | nl
+}
+
 # Fast directory switching
 mkdir -p $DOTFILES/caches/z
 _Z_NO_PROMPT_COMMAND=1
