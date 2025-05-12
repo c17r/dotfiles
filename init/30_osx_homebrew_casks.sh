@@ -9,6 +9,7 @@ kegs=(
   homebrew/cask-drivers
   homebrew/cask-fonts
   homebrew/cask-versions
+  sdkman/tap
 )
 brew_tap_kegs
 
@@ -59,7 +60,9 @@ casks_common=(
   # Color pickers
   colorpicker-developer
   colorpicker-skalacolor
+
   dotnet-sdk
+  sdkman-cli
 )
 
 casks_work=(

@@ -44,10 +44,18 @@ fi
 local h1="$(tput smul)"
 local h2="$(tput rmul)"
 
+local loud=1
+
 # Store any dirs passed before -- in an array.
 local dashes d
 local dirs=()
 for d in "$@"; do
+  if [[ "$d" == "-q" ]]; then
+    loud=0
+    shift
+    continue
+  fi
+
   if [[ "$d" == "--" ]]; then
     dashes=1
     shift $(( ${#dirs[@]} + 1 ))
@@ -78,7 +86,7 @@ for d in "${dirs[@]}"; do
 done
 
 # List any dirs that had no output.
-if [[ ${#nops[@]} > 0 ]]; then
+if [[ ${#nops[@]} > 0 && loud -eq 1 ]]; then
   echo "${h1}no output from${h2}"
   for d in "${nops[@]}"; do echo "$d"; done
 fi

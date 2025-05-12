@@ -8,6 +8,7 @@
 /link/.ssh/id_*
 !/link/.ssh/id_*.pub
 /link/.ssh/known_hosts
+/link/.ssh/keys
 
 # Don't commit Vim plugins, vim-plug will install them.
 /link/.vim/plugged
