@@ -6,6 +6,8 @@ export HOMEBREW_NO_ENV_HINTS=1
 
 export HOMEBREW_BIN=/opt/homebrew/bin
 export PATH="$HOMEBREW_BIN:$(path_remove $HOMEBREW_BIN)"
+export HOMEBREW_SBIN=/opt/homebrew/sbin
+export PATH="$HOMEBREW_SBIN:$(path_remove $HOMEBREW_SBIN)"
 
 function brew() {
 	/usr/bin/env PATH="$(path_remove $(pyenv root)/shims)" /opt/homebrew/bin/brew "$@"
