@@ -12,5 +12,5 @@ function brew() {
 }
 
 function brew-update() {
-	brew update && brew upgrade && brew pyenv-sync && brew rbenv-sync
+	brew update && brew upgrade && brew pyenv-sync && brew rbenv-sync && brew nodenv-sync
 }

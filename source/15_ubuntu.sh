@@ -1,3 +1,9 @@
+
+function ubuntu-ssh-dist-upgrade() {
+  ssh $1 'sudo bash -c "apt-get update && apt dist-upgrade -y && apt autoremove -y"'
+}
+
+
 # Ubuntu-only stuff. Abort if not Ubuntu.
 is_ubuntu || return 1
 
